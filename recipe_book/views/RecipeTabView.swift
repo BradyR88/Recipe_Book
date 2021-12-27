@@ -13,7 +13,7 @@ struct RecipeTabView: View {
         TabView {
             
             //featured view to be added lator
-            Text("Featured View")  // place holder
+            FeaturedView()  // place holder
                 .tabItem {
                     VStack {
                         Image(systemName: "star.fill")
@@ -29,6 +29,7 @@ struct RecipeTabView: View {
                     }
                 }
         }
+        .environmentObject(RecipeModel())
         
     }
 }
