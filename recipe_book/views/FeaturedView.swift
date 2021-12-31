@@ -61,6 +61,7 @@ struct FeaturedView: View {
                 Text("Helathy, Herty")
             }
             .padding(.horizontal)
+            .padding(.bottom, 10)
         }
         
     }
