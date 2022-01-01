@@ -10,6 +10,7 @@ import SwiftUI
 struct FeaturedView: View {
     
     @EnvironmentObject var model:RecipeModel
+    @State var isDetailViewShowing = false
     
     var body: some View {
         
@@ -27,19 +28,29 @@ struct FeaturedView: View {
                     
                     if model.recipe[r].featured == true {
                         
-                        // recipe card
-                        ZStack {
-                            Rectangle()
-                                .foregroundColor(.white)
-                            VStack(spacing: 0) {
-                                Image(model.recipe[r].image)
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                    .clipped()
-                                Text(model.recipe[r].name)
-                                    .padding(5)
+                        Button(action: {
+                            //sjow the serapy detale sheat
+                            self.isDetailViewShowing = true
+                        }) {
+                            // recipe card
+                            ZStack {
+                                Rectangle()
+                                    .foregroundColor(.white)
+                                VStack(spacing: 0) {
+                                    Image(model.recipe[r].image)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                        .clipped()
+                                    Text(model.recipe[r].name)
+                                        .padding(5)
+                                }
                             }
                         }
+                        .sheet(isPresented: $isDetailViewShowing) {
+                            //show the recipe detail view
+                            RecipeDetailView(recipe: model.recipe[r])
+                        }
+                        .buttonStyle(PlainButtonStyle())
                         .frame(width: geo.size.width-40, height: geo.size.height-100, alignment: .center)
                         .cornerRadius(15)
                         .shadow(radius: 10, x: -5, y: 5)
