@@ -9,11 +9,10 @@ import SwiftUI
 
 struct FeaturedView: View {
     
-    @Environment(\.managedObjectContext) private var viewContext
-    
-    @EnvironmentObject var model:RecipeModel
     @State var isDetailViewShowing = false
     @State var tabSelectionIndex = 0
+    
+    @FetchRequest(sortDescriptors: [NSSortDescriptor(key: "name", ascending: true)], predicate: NSPredicate(format: "featured == true")) var recipes: FetchedResults<Recipe>
     
     var body: some View {
         
@@ -27,9 +26,7 @@ struct FeaturedView: View {
             
             GeometryReader { geo in
                 TabView (selection: $tabSelectionIndex){
-                ForEach (0..<model.recipe.count) { r in
-                    
-                    if model.recipe[r].featured == true {
+                    ForEach (0..<recipes.count) { r in
                         
                         Button(action: {
                             //sjow the serapy detale sheat
@@ -40,12 +37,12 @@ struct FeaturedView: View {
                                 Rectangle()
                                     .foregroundColor(.white)
                                 VStack(spacing: 0) {
-                                    let image = UIImage(data: model.recipe[r].image ?? Data()) ?? UIImage()
+                                    let image = UIImage(data: recipes[r].image ?? Data()) ?? UIImage()
                                     Image(uiImage: image)
                                         .resizable()
                                         .aspectRatio(contentMode: .fill)
                                         .clipped()
-                                    Text(model.recipe[r].name)
+                                    Text(recipes[r].name)
                                         .padding(5)
                                 }
                             }
@@ -53,28 +50,28 @@ struct FeaturedView: View {
                         .tag(r)
                         .sheet(isPresented: $isDetailViewShowing) {
                             //show the recipe detail view
-                            RecipeDetailView(recipe: model.recipe[r])
+                            RecipeDetailView(recipe: recipes[r])
                         }
                         .buttonStyle(PlainButtonStyle())
                         .frame(width: geo.size.width-40, height: geo.size.height-100, alignment: .center)
                         .cornerRadius(15)
                         .shadow(radius: 10, x: -5, y: 5)
+                        
+                        
+                        
                     }
-                    
-                    
                 }
-            }
-            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .automatic))
-            .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
+                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .automatic))
+                .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
             }
             
             VStack(alignment: .leading, spacing: 10){
                 Text("Preperatin Time:")
                     .font(.headline)
-                Text(model.recipe[tabSelectionIndex].prepTime)
+                Text(recipes[tabSelectionIndex].prepTime)
                 Text("Highlights:")
                     .font(.headline)
-                RecipeHighlights(highlights: model.recipe[tabSelectionIndex].highlights)
+                RecipeHighlights(highlights: recipes[tabSelectionIndex].highlights)
             }
             .padding(.horizontal)
             .padding(.bottom, 10)
@@ -87,7 +84,7 @@ struct FeaturedView: View {
     
     func setFeaturedIndex() {
         //find the index of the first recipe that is fearured
-        var index = model.recipe.firstIndex { (recipe) -> Bool in
+        var index = recipes.firstIndex { (recipe) -> Bool in
             return recipe.featured
         }
         tabSelectionIndex = index ?? 0
