@@ -26,6 +26,7 @@
 		732EEBA427C6EA5000FBFB7E /* Recipe+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732EEBA027C6EA5000FBFB7E /* Recipe+CoreDataClass.swift */; };
 		732EEBA527C6EA5000FBFB7E /* Recipe+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732EEBA127C6EA5000FBFB7E /* Recipe+CoreDataProperties.swift */; };
 		732EEBA727C7DAB100FBFB7E /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732EEBA627C7DAB100FBFB7E /* Persistence.swift */; };
+		732EEBA927C7E0C100FBFB7E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732EEBA827C7E0C100FBFB7E /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		732EEBA027C6EA5000FBFB7E /* Recipe+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Recipe+CoreDataClass.swift"; sourceTree = "<group>"; };
 		732EEBA127C6EA5000FBFB7E /* Recipe+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Recipe+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		732EEBA627C7DAB100FBFB7E /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		732EEBA827C7E0C100FBFB7E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				23E5F57A2780D4C000718CEA /* Rational.swift */,
+				732EEBA827C7E0C100FBFB7E /* Constants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				732EEBA527C6EA5000FBFB7E /* Recipe+CoreDataProperties.swift in Sources */,
+				732EEBA927C7E0C100FBFB7E /* Constants.swift in Sources */,
 				732EEBA727C7DAB100FBFB7E /* Persistence.swift in Sources */,
 				2330D5402779335200B97F5D /* FeaturedView.swift in Sources */,
 				2330D4DB2774C1EE00B97F5D /* RecipeListView.swift in Sources */,
