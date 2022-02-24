@@ -9,6 +9,8 @@ import SwiftUI
 
 struct FeaturedView: View {
     
+    @Environment(\.managedObjectContext) private var viewContext
+    
     @EnvironmentObject var model:RecipeModel
     @State var isDetailViewShowing = false
     @State var tabSelectionIndex = 0
@@ -38,7 +40,8 @@ struct FeaturedView: View {
                                 Rectangle()
                                     .foregroundColor(.white)
                                 VStack(spacing: 0) {
-                                    Image(model.recipe[r].image)
+                                    let image = UIImage(data: model.recipe[r].image ?? Data()) ?? UIImage()
+                                    Image(uiImage: image)
                                         .resizable()
                                         .aspectRatio(contentMode: .fill)
                                         .clipped()

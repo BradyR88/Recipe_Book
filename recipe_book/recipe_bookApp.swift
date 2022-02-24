@@ -10,8 +10,11 @@ import SwiftUI
 @main
 struct recipe_bookApp: App {
     var body: some Scene {
+        let persistenceController = PersistenceController.shared
+        
         WindowGroup {
             RecipeTabView()
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }
