@@ -11,7 +11,20 @@ struct RecipeListView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
     
-    @EnvironmentObject var model:RecipeModel
+    //@EnvironmentObject var model:RecipeModel
+    @FetchRequest(sortDescriptors: [NSSortDescriptor(key: "name", ascending: true)]) var recipes: FetchedResults<Recipe>
+    @State private var filterBy = ""
+    
+    private var filteredRecipes: [Recipe] {
+        if filterBy.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+            return Array(recipes)
+        }
+        else {
+            return recipes.filter { r in
+                return r.name.contains(filterBy)
+            }
+        }
+    }
     
     var body: some View {
         
@@ -23,9 +36,12 @@ struct RecipeListView: View {
                     .padding(.leading)
                     .padding(.top, 40)
                 
+                SearchBarView(filterBy: $filterBy)
+                    .padding([.horizontal,.bottom])
+                
                 ScrollView {
                     LazyVStack(alignment: .leading) {
-                        ForEach(model.recipe) { r in
+                        ForEach(filteredRecipes) { r in
                             NavigationLink (destination: RecipeDetailView(recipe: r)) {
                                 HStack(spacing: 20.0) {
                                     let image = UIImage(data: r.image ?? Data()) ?? UIImage()
@@ -50,6 +66,9 @@ struct RecipeListView: View {
                 }
             }
             .navigationBarHidden(true)
+            .onTapGesture {
+                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+            }
         }
     }
 }

@@ -27,6 +27,7 @@
 		732EEBA527C6EA5000FBFB7E /* Recipe+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732EEBA127C6EA5000FBFB7E /* Recipe+CoreDataProperties.swift */; };
 		732EEBA727C7DAB100FBFB7E /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732EEBA627C7DAB100FBFB7E /* Persistence.swift */; };
 		732EEBA927C7E0C100FBFB7E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732EEBA827C7E0C100FBFB7E /* Constants.swift */; };
+		732EEBAB27C80DF300FBFB7E /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732EEBAA27C80DF300FBFB7E /* SearchBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		732EEBA127C6EA5000FBFB7E /* Recipe+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Recipe+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		732EEBA627C7DAB100FBFB7E /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		732EEBA827C7E0C100FBFB7E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		732EEBAA27C80DF300FBFB7E /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				2330D4F42774F92C00B97F5D /* RecipeDetailView.swift */,
 				2330D53F2779335200B97F5D /* FeaturedView.swift */,
 				23E5F57C2781037300718CEA /* RecipeHighlights.swift */,
+				732EEBAA27C80DF300FBFB7E /* SearchBarView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				2330D4F52774F92C00B97F5D /* RecipeDetailView.swift in Sources */,
 				2330D4F32774CE0600B97F5D /* RecipeModel.swift in Sources */,
 				2330D4EF2774C56000B97F5D /* Recipe.swift in Sources */,
+				732EEBAB27C80DF300FBFB7E /* SearchBarView.swift in Sources */,
 				732EEBA327C6EA5000FBFB7E /* Ingredient+CoreDataProperties.swift in Sources */,
 				2330D4D92774C1EE00B97F5D /* recipe_bookApp.swift in Sources */,
 				732EEBA427C6EA5000FBFB7E /* Recipe+CoreDataClass.swift in Sources */,
