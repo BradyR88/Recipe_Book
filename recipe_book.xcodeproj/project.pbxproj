@@ -31,6 +31,8 @@
 		732EEBAD27C826DD00FBFB7E /* AddRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732EEBAC27C826DD00FBFB7E /* AddRecipeView.swift */; };
 		732EEBB327C82D6000FBFB7E /* AddMetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732EEBB227C82D6000FBFB7E /* AddMetaData.swift */; };
 		732EEBB527C82E4600FBFB7E /* AddListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732EEBB427C82E4600FBFB7E /* AddListData.swift */; };
+		732EEBB727C92D8600FBFB7E /* AddIngredientData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732EEBB627C92D8600FBFB7E /* AddIngredientData.swift */; };
+		732EEBB927CD385D00FBFB7E /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732EEBB827CD385D00FBFB7E /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +61,8 @@
 		732EEBAC27C826DD00FBFB7E /* AddRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeView.swift; sourceTree = "<group>"; };
 		732EEBB227C82D6000FBFB7E /* AddMetaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMetaData.swift; sourceTree = "<group>"; };
 		732EEBB427C82E4600FBFB7E /* AddListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListData.swift; sourceTree = "<group>"; };
+		732EEBB627C92D8600FBFB7E /* AddIngredientData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIngredientData.swift; sourceTree = "<group>"; };
+		732EEBB827CD385D00FBFB7E /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +181,8 @@
 				732EEBAC27C826DD00FBFB7E /* AddRecipeView.swift */,
 				732EEBB227C82D6000FBFB7E /* AddMetaData.swift */,
 				732EEBB427C82E4600FBFB7E /* AddListData.swift */,
+				732EEBB627C92D8600FBFB7E /* AddIngredientData.swift */,
+				732EEBB827CD385D00FBFB7E /* ImagePicker.swift */,
 			);
 			path = "Add Recipe";
 			sourceTree = "<group>";
@@ -290,6 +296,8 @@
 				2330D4F52774F92C00B97F5D /* RecipeDetailView.swift in Sources */,
 				2330D4F32774CE0600B97F5D /* RecipeModel.swift in Sources */,
 				2330D4EF2774C56000B97F5D /* Recipe.swift in Sources */,
+				732EEBB727C92D8600FBFB7E /* AddIngredientData.swift in Sources */,
+				732EEBB927CD385D00FBFB7E /* ImagePicker.swift in Sources */,
 				732EEBAD27C826DD00FBFB7E /* AddRecipeView.swift in Sources */,
 				732EEBAB27C80DF300FBFB7E /* SearchBarView.swift in Sources */,
 				732EEBA327C6EA5000FBFB7E /* Ingredient+CoreDataProperties.swift in Sources */,
@@ -432,6 +440,7 @@
 				DEVELOPMENT_TEAM = F4APFPN2XP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Access to the camera to take a photo";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -461,6 +470,7 @@
 				DEVELOPMENT_TEAM = F4APFPN2XP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Access to the camera to take a photo";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

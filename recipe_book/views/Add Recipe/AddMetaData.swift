@@ -21,30 +21,35 @@ struct AddMetaData: View {
         Group {
             HStack {
                 Text("Name: ")
+                    .bold()
                 TextField("Tuna Casserole", text: $name)
             }
             HStack {
                 Text("Summary: ")
+                    .bold()
                 TextField("A delicious meal for the whole family", text: $summary)
             }
             HStack {
                 Text("Prep Time: ")
+                    .bold()
                 TextField("1 hours", text: $prepTime)
             }
             HStack {
                 Text("Cook Time: ")
+                    .bold()
                 TextField("2 hours", text: $cookTime)
             }
             HStack {
                 Text("Total Time: ")
+                    .bold()
                 TextField("3 hours", text: $totalTime)
             }
             HStack {
                 Text("Servings: ")
+                    .bold()
                 TextField("6", text: $servings)
             }
         }
-        
     }
 }
 
