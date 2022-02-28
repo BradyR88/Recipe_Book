@@ -9,6 +9,8 @@ import SwiftUI
 
 struct AddRecipeView: View {
     
+    @Environment(\.managedObjectContext) private var viewContext
+    
     // meta data
     @State private var name = ""
     @State private var summary = ""
@@ -126,9 +128,41 @@ struct AddRecipeView: View {
         directions = [String]()
         
         ingredient = [IngredientJSON]()
+        
+        placeHolderImage = Image("noImageAvailable")
     }
     
     func addRecipe() {
+        let recipe = Recipe(context: viewContext)
+        recipe.id = UUID()
+        recipe.name = name
+        recipe.cookTime = cookTime
+        recipe.prepTime = prepTime
+        recipe.totalTime = totalTime
+        recipe.servings = Int(servings) ?? 1
+        recipe.directions = directions
+        recipe.highlights = highlights
+        recipe.image = recipeImage?.pngData()
+        
+        for i in ingredient {
+            let ingredient = Ingredient(context: viewContext)
+            ingredient.id = UUID()
+            ingredient.name = i.name
+            ingredient.unit = i.unit
+            ingredient.num = i.num ?? 1
+            ingredient.denom = i.denom ?? 1
+            
+            recipe.addToIngredients(ingredient)
+            
+        }
+        
+        do {
+            //save the core data
+            try viewContext.save()
+        }
+        catch {
+            //
+        }
         
     }
     
